@@ -1,0 +1,101 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Corpo da página */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    padding: 20px;
+}
+
+/* Cabeçalho */
+header {
+    background-color: #003366;
+    color: white;
+    text-align: center;
+    padding: 25px;
+    margin-bottom: 20px;
+}
+
+/* Dashboard */
+.dashboard {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+}
+
+/* Título */
+.dashboard h2 {
+    margin-bottom: 20px;
+}
+
+/* Cards */
+#cards-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+/* Card individual */
+.card {
+    background-color: #e6f0ff;
+    width: 250px;
+    padding: 15px;
+    border-radius: 10px;
+    border: 1px solid #999;
+}
+
+/* Título do card */
+.card h3 {
+    margin-bottom: 10px;
+    color: #003366;
+}
+
+/* Informações */
+.card p {
+    margin-bottom: 8px;
+}
+
+/* Classificação da vegetação */
+
+.normal {
+    border: 3px solid green;
+}
+
+.atencao {
+    border: 3px solid orange;
+}
+
+.risco {
+    border: 3px solid orangered;
+}
+
+.critico {
+    border: 3px solid red;
+}
+
+/* Footer */
+footer {
+    background-color: #003366;
+    color: white;
+    text-align: center;
+    padding: 15px;
+    margin-top: 20px;
+}
+
+/* Responsividade */
+@media (max-width: 600px) {
+
+    #cards-container {
+        flex-direction: column;
+    }
+
+    .card {
+        width: 100%;
+    }
+
+}
