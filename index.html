@@ -14,14 +14,72 @@
 
     <header>
         <h1>Dashboard Ambiental - Motiva</h1>
-        <p>Monitoramento remoto de áreas de vegetação</p>
+        <p>Monitoramento e priorização da manutenção da vegetação</p>
     </header>
 
     <main>
 
         <section class="dashboard">
 
-            <h2>Condições das Regiões Monitoradas</h2>
+            <h2>Painel de Monitoramento</h2>
+
+            <p class="descricao">
+                Acompanhe as condições da vegetação, identifique pontos prioritários
+                e consulte as ações recomendadas para cada região monitorada.
+            </p>
+
+            <!-- Indicadores gerais -->
+            <section class="indicadores">
+
+                <div class="indicador total">
+                    <h3>Total de pontos</h3>
+                    <p id="total-pontos">0</p>
+                </div>
+
+                <div class="indicador normal">
+                    <h3>Normal</h3>
+                    <p id="total-normal">0</p>
+                </div>
+
+                <div class="indicador atencao">
+                    <h3>Atenção</h3>
+                    <p id="total-atencao">0</p>
+                </div>
+
+                <div class="indicador risco">
+                    <h3>Risco</h3>
+                    <p id="total-risco">0</p>
+                </div>
+
+                <div class="indicador critico">
+                    <h3>Crítico</h3>
+                    <p id="total-critico">0</p>
+                </div>
+
+            </section>
+
+            <!-- Filtro por classificação -->
+            <section class="filtros">
+
+                <label for="filtro-classificacao">
+                    Filtrar pontos por classificação:
+                </label>
+
+                <select id="filtro-classificacao">
+                    <option value="todos">Todas as classificações</option>
+                    <option value="Normal">Normal</option>
+                    <option value="Atenção">Atenção</option>
+                    <option value="Risco">Risco</option>
+                    <option value="Crítico">Crítico</option>
+                </select>
+
+            </section>
+
+            <h2 class="titulo-pontos">Pontos Monitorados</h2>
+
+            <div id="mensagem-carregamento">
+                Carregando informações dos pontos monitorados...
+            </div>
 
             <div id="cards-container"></div>
 
@@ -30,7 +88,8 @@
     </main>
 
     <footer>
-        <p>© 2026 Motiva - Monitoramento Ambiental</p>
+        <p>Projeto acadêmico - Sprint 4 - Application Development</p>
+        <p>Monitoramento de vegetação em áreas próximas a rodovias</p>
     </footer>
 
     <script src="script.js"></script>

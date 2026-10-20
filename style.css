@@ -1,101 +1,351 @@
+/* ==========================================
+   1. CONFIGURAÇÕES GERAIS
+========================================== */
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* Corpo da página */
 body {
     font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
-    padding: 20px;
+    background-color: #f1f4f8;
+    color: #263238;
+    padding: 16px;
+    line-height: 1.5;
 }
 
-/* Cabeçalho */
+
+/* ==========================================
+   2. CABEÇALHO
+========================================== */
+
 header {
     background-color: #003366;
     color: white;
     text-align: center;
-    padding: 25px;
-    margin-bottom: 20px;
+    padding: 28px 20px;
+    margin-bottom: 22px;
+    border-radius: 10px;
 }
 
-/* Dashboard */
+header h1 {
+    font-size: 30px;
+    margin-bottom: 4px;
+}
+
+header p {
+    font-size: 16px;
+}
+
+
+/* ==========================================
+   3. PAINEL PRINCIPAL
+========================================== */
+
 .dashboard {
     background-color: white;
-    padding: 20px;
+    padding: 24px;
+    border-radius: 12px;
+    border: 1px solid #dce2e8;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.05);
+}
+
+.dashboard > h2 {
+    color: #003366;
+    margin-bottom: 12px;
+}
+
+.descricao {
+    margin-bottom: 22px;
+    color: #52616b;
+}
+
+
+/* ==========================================
+   4. INDICADORES
+========================================== */
+
+.indicadores {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 16px;
+    margin: 20px 0 28px;
+}
+
+.indicador {
+    padding: 18px;
     border-radius: 10px;
-    border: 1px solid #ccc;
+    background-color: #ffffff;
+    border: 1px solid #dce2e8;
+    border-left: 5px solid #64748b;
 }
 
-/* Título */
-.dashboard h2 {
-    margin-bottom: 20px;
+.indicador h3 {
+    font-size: 15px;
+    margin-bottom: 8px;
+    color: #374151;
 }
 
-/* Cards */
-#cards-container {
+.indicador p {
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.indicador.total {
+    border-left-color: #003366;
+    background-color: #edf4ff;
+}
+
+.indicador.normal {
+    border-left-color: #198754;
+    background-color: #edf8f0;
+}
+
+.indicador.atencao {
+    border-left-color: #e5a000;
+    background-color: #fff8e5;
+}
+
+.indicador.risco {
+    border-left-color: #f06423;
+    background-color: #fff1e9;
+}
+
+.indicador.critico {
+    border-left-color: #dc3545;
+    background-color: #fff0f1;
+}
+
+
+/* ==========================================
+   5. FILTRO
+========================================== */
+
+.filtros {
     display: flex;
+    align-items: center;
     flex-wrap: wrap;
-    gap: 20px;
+    gap: 12px;
+    margin: 24px 0;
+    padding: 16px;
+    background-color: #f7f9fc;
+    border: 1px solid #e1e7ee;
+    border-radius: 8px;
 }
 
-/* Card individual */
-.card {
-    background-color: #e6f0ff;
-    width: 250px;
-    padding: 15px;
-    border-radius: 10px;
-    border: 1px solid #999;
+.filtros label {
+    font-weight: bold;
 }
 
-/* Título do card */
-.card h3 {
-    margin-bottom: 10px;
+.filtros select {
+    padding: 10px 12px;
+    border: 1px solid #aab7c4;
+    border-radius: 6px;
+    background-color: white;
+    color: #263238;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+
+/* ==========================================
+   6. LISTA DE PONTOS
+========================================== */
+
+.titulo-pontos {
+    margin: 26px 0 16px;
     color: #003366;
 }
 
-/* Informações */
+#mensagem-carregamento {
+    margin: 12px 0;
+    color: #52616b;
+    font-size: 14px;
+}
+
+#cards-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 20px;
+    align-items: stretch;
+}
+
+
+/* ==========================================
+   7. CARDS DOS PONTOS
+========================================== */
+
+.card {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    border: 1px solid #dce2e8;
+    border-left: 6px solid #64748b;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.05);
+    overflow-wrap: anywhere;
+}
+
+.card-cabecalho {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 14px;
+}
+
+.card h3 {
+    color: #003366;
+    font-size: 19px;
+}
+
 .card p {
-    margin-bottom: 8px;
+    margin-bottom: 10px;
+    font-size: 14px;
 }
 
-/* Classificação da vegetação */
-
-.normal {
-    border: 3px solid green;
+.card.normal {
+    border-left-color: #198754;
 }
 
-.atencao {
-    border: 3px solid orange;
+.card.atencao {
+    border-left-color: #e5a000;
 }
 
-.risco {
-    border: 3px solid orangered;
+.card.risco {
+    border-left-color: #f06423;
 }
 
-.critico {
-    border: 3px solid red;
+.card.critico {
+    border-left-color: #dc3545;
 }
 
-/* Footer */
+
+/* ==========================================
+   8. ETIQUETAS DE CLASSIFICAÇÃO
+========================================== */
+
+.etiqueta {
+    display: inline-block;
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: bold;
+    white-space: nowrap;
+}
+
+.etiqueta.normal {
+    background-color: #d8f3df;
+    color: #146c35;
+}
+
+.etiqueta.atencao {
+    background-color: #fff0bd;
+    color: #795600;
+}
+
+.etiqueta.risco {
+    background-color: #ffe0cf;
+    color: #96380c;
+}
+
+.etiqueta.critico {
+    background-color: #fbd7da;
+    color: #a51f2b;
+}
+
+
+/* ==========================================
+   9. AÇÃO RECOMENDADA
+========================================== */
+
+.acao-recomendada {
+    margin-top: 14px;
+    padding: 12px;
+    background-color: #f7f9fc;
+    border-radius: 7px;
+    border: 1px solid #e4e9ef;
+}
+
+
+/* ==========================================
+   10. DADOS CLIMÁTICOS
+========================================== */
+
+.dados-climaticos {
+    margin-top: 16px;
+    padding-top: 12px;
+    border-top: 1px solid #e1e7ee;
+}
+
+.dados-climaticos .titulo-clima {
+    color: #003366;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+
+/* ==========================================
+   11. RODAPÉ
+========================================== */
+
 footer {
     background-color: #003366;
     color: white;
     text-align: center;
-    padding: 15px;
-    margin-top: 20px;
+    padding: 18px;
+    margin-top: 24px;
+    border-radius: 10px;
+    font-size: 13px;
 }
 
-/* Responsividade */
+
+/* ==========================================
+   12. RESPONSIVIDADE
+========================================== */
+
 @media (max-width: 600px) {
+    body {
+        padding: 8px;
+    }
+
+    header {
+        padding: 22px 12px;
+    }
+
+    header h1 {
+        font-size: 23px;
+    }
+
+    .dashboard {
+        padding: 15px;
+    }
+
+    .indicadores {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 10px;
+    }
+
+    .indicador {
+        padding: 12px;
+    }
+
+    .indicador p {
+        font-size: 25px;
+    }
 
     #cards-container {
+        grid-template-columns: 1fr;
+    }
+
+    .filtros {
+        align-items: stretch;
         flex-direction: column;
     }
 
-    .card {
+    .filtros select {
         width: 100%;
     }
-
 }
